@@ -63,12 +63,22 @@ body {
     color: black;
     margin-left: 17rem;
 }
+.container-logo {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: column-reverse;
+}
 
 .logo{
-    margin: .7rem 0rem 0 .1rem;
+    margin: .9rem 0rem 0 .1rem;
     width: 100%;
     min-width: 2rem;
     max-width: 2.8rem;
+}
+.container-logo span {
+    color: white;
+    font-size: .8rem;
 }
 .input-icono {
     margin: .4rem .1rem .1rem 1rem;
@@ -342,7 +352,7 @@ li {
     height: 100%;
     padding: 0.5rem;
     line-height: 1.45rem;
-    margin-top: -7.5rem ;
+    margin-top: -6.5rem ;
     border: 1px solid #DFD9D9;
     box-sizing: border-box;
     filter: drop-shadow(8px 4px 4px rgba(0, 0, 0, 0.25));
