@@ -20,7 +20,7 @@ const iconFilter = document.querySelector('.container-icon-filter i');
 const hidechart=document.getElementById('regions_div');
 // Data completa
 const dataAthletes = athletes.athletes;
-//Data filtrada
+// Data filtrada
 const athletesWithoutDuplicates = filterData.removeDuplicateNames(dataAthletes);
 
 // Función que oculta información previa del Home Page
@@ -30,7 +30,7 @@ function hideHomePage() {
   containerSlide.style.display = 'none';
 }
 
-// Funcion para volver a la home page
+// Función para volver a la home page
 function showHomePage() {
   hideNavigation();
   containerSectionAthletes.style.display = 'none';
@@ -45,7 +45,7 @@ function showHomePage() {
 // Ocultamos la sección de atletas de la Home Page 
 containerSectionAthletes.style.display = 'none';
 
-// Funcion para selecionar slides
+// Función para selecionar slides
 const slides = document.querySelectorAll('.slide');
 const btnSlides = document.querySelectorAll('.btn-slide');
 let currentSlide = 1; //eslint-disable-line
@@ -73,7 +73,7 @@ btnSlides.forEach((btn, index) => {
   });
 });
 
-// Muestra la navegacion al hacer click en el icono de menu de responsive
+// Muestra la navegación al hacer click en el icono de menu de responsive
 function displayNavigation() {
   if(menuBar.classList.contains('fa-bars')){
     menuBar.classList.remove('fa-bars');
@@ -86,23 +86,23 @@ function displayNavigation() {
   }
 }
 
-// Oculta la navegacion en responsive
+// Oculta la navegación en responsive
 function hideNavigation() {
   menuBar.classList.remove('fa-times'); // Elimina el icono de x
   document.querySelector('nav').classList.add('nav-hide'); // Oculta la navegacion 
   menuBar.classList.add('fa-bars'); // Muestra el icono de menu
 }
 
-// Muestra la lista de categorias al hacer click en el icono de filtrar
+// Muestra la lista de categorías al hacer click en el icono de filtrar
 function displayListCategory() {
   document.querySelector('.container-nav-category').style.display = 'block';
 }
-// Oculta la lista de categorias al hacer click en el icono de x
+// Oculta la lista de categorías al hacer click en el icono de x
 function hideListCategories() {
   document.querySelector('.container-nav-category').style.display = 'none';
 }
 
-// Google Chart Participacion de mujeres
+// Google Chart Participación de mujeres
 google.charts.load('current', {'packages':['corechart']}); //eslint-disable-line
 google.charts.setOnLoadCallback(drawChart); //eslint-disable-line
 
@@ -199,7 +199,7 @@ function completeAthleteInformation() {
   }
 }
 
-// // Funcion para mostrar todos los deportes
+// Función para mostrar todos los deportes
 function showSport() {
   hideNavigation();
   hideHomePage();
@@ -221,7 +221,7 @@ function showSport() {
   })
   // Agrega evento a cada card de Deportes
   const cardSport = document.getElementsByClassName('sport');
- //informaSport.innerHTML='';
+
   for (let i = 0; i < cardSport.length; i++) {
     cardSport[i].addEventListener('click', () => {
       containerSport.style.display = 'none';
@@ -238,7 +238,7 @@ function showStatistics() {
   document.querySelector('.one-athlethe').style.display = 'none';
   containerSectionAthletes.style.display = 'none';
   containerSport.style.display = 'none';
-  containerStatistics.style.display = 'block';
+  containerStatistics.style.display = 'flex';
   hidechart.style.display='block'
   hideHomePage();
   containerStatistics.innerHTML = "";
@@ -325,32 +325,16 @@ google.charts.load('current', { //eslint-disable-line
 function showCharts() {
   showStatistics();
   hideHomePage();
-  // const showCharts = document.createElement('div');
-  // showCharts.classList.add("athlete-detail");
-  // showCharts.innerHTML = `
-  //     <p> Mapa de medallas de oro </p>
-  //     `
-  // showCharts1.appendChild('showCharts');
   google.charts.setOnLoadCallback(drawRegionsMap);//eslint-disable-line
 }
 function drawRegionsMap() {
 
   const totalMedalGold = statisticsData.sumMedalsCountries('Gold', dataAthletes);
-  //const totalMedalSilver = statisticsData.sumMedalsCountries('Silver', dataAthletes);
-  //const totalMedalBronze = statisticsData.sumMedalsCountries('Bronze', dataAthletes);
-  //let table = [];
- // let oro= [];
   let table=[];
   for (var i in totalMedalGold) {
     table.push([i.substring(0, 2), totalMedalGold[i]]);
   }
-  // for( let a in totalMedalSilver){
-  //  plata.push([a.substring(0, 2),totalMedalSilver [a]]);
- // }
-  //let table = Array(...oro,...plata);
   table[0] = ['Country', 'Total medallas de Oro'];
-  //table[1] = ['Country', 'medallas de Plata'];
-//  console.log(table);
 
   const data = google.visualization.arrayToDataTable(table); //eslint-disable-line
   const options = {
@@ -367,7 +351,6 @@ btnStatistics.addEventListener("click", showCharts,showStatistics);
 btnHome.addEventListener("click", showHomePage);
 
 // Eventos a Página de Atletas
-//const navCategory = document.querySelectorAll('.nav-subcategory');
 const navCategory = document.getElementsByClassName('subcategory');
 for (let i = 0; i < navCategory.length; i++) {
   navCategory[i].addEventListener("click", () => {
@@ -393,7 +376,7 @@ function displayResultSearch() {
   displayCards(resultSearch, containerAthletes)
 }
 
-// Eventos a los icono del menu
+// Eventos a los iconos del menú
 menuBar.addEventListener('click', displayNavigation)
 iconFilter.addEventListener('click', displayListCategory)
 document.querySelector('#icon-x').addEventListener('click', hideListCategories);
