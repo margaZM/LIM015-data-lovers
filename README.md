@@ -13,8 +13,7 @@
 
 ## 1. Definición del producto :pencil:
 
-Olympia es una página web donde podrás encontrar los datos más resaltantes de los Juegos Olímpicos celebrados el año 2016 en la ciudad de Río de Janeiro de Brazil. En ella además de ver la imágenes más resaltantes del evento podrás filtrar por diferentes categorás como género, edad y medallas ganadas o realizar una búsqueda personalizada desde el input de buscar, también podrás ordenar de manera ascendente y descendente y observar el ranking de medallas obtenidas de acuerdo a cada país y hacemos una espeial consideración en destacar la participación de las mujeres y sus logros.
-
+Olympia es una página web donde podrás encontrar los datos más resaltantes de los Juegos Olímpicos celebrados el año 2016 en la ciudad de Río de Janeiro de Brazil. En ella además de ver la imágenes más resaltantes del evento podrás filtrar por diferentes categorás como género, edad y medallas ganadas o realizar una búsqueda personalizada desde el input de buscar, también podrás ordenar de manera ascendente y descendente y observar el ranking de medallas obtenidas de acuerdo a cada país y hacemos una espeial consideración en destacar la participación de las mujeres y sus logros. A través de este [link](https://margazm.github.io/LIM015-data-lovers/src/) puedes observar el proyecto finalizado.
 
 ## 2. Definición de usuarios :woman: :man:
 
